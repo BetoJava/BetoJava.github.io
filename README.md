@@ -1,2 +1,2 @@
 # **JEAN-BAPTISTE WEBSITE**
-link : [BetoJava.github.io](BetoJava.github.io)
+link : [BetoJava.github.io](https://BetoJava.github.io)
