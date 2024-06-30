@@ -1,47 +1,156 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" />
-    <title>Jean-Baptiste TROGNON</title>
-    <link rel="icon" href="assets/icon.svg" type="svg">
-    
-</head>
-<body>
-    <div class="c">
-        <diV id="d1">
-            <h1>Jean-Baptiste</h1>
-            
-            <h2>Data Analysis, Machine Learning, Data Visualization</h2>
-            <p>Third-year Data Science and Engineering student,<br></br>I am open to Data Science internship opportunities.</p>
-            
-        </diV>
 
-        <div id="d2">   
-            <div class="box">
-                <a href="mailto:jean-baptiste.trognon@mines-ales.org" class="btn btn-one one">
-                <span>EMAIL</span>
-                </a>
-            </div>
-            <div class="box">
-                <a href="https://github.com/BetoJava" class="btn btn-one two">
-                <span>GITHUB</span>
-                </a>
-            </div>
-            <div class="box">
-                <a href="files/CV_TROGNON_Jean-Baptiste.pdf" class="btn btn-one three">
-                <span>CV</span>
-                </a>
-            </div>
-        </div> 
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jean-Baptiste TROGNON</title>
+        <style>
+            :root {
+                --blue: hsl(210, 50%, 60%);
+                --purple: hsl(270, 50%, 60%);
+                --green: hsl(120, 50%, 60%);
+                --yellow: hsl(60, 70%, 60%);
+                --white: hsl(0, 0%, 95%);
+                --gray: hsl(176, 68%, 46%);
+            }
     
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
     
-    <p id="more">I'm passionate about data exploration and solving complex problems. 
-        I have strong skills in programming, analytical, statistics, and machine learning, 
-        with a knack for effective communication.</p>
+            body {
+                background: hsl(224, 32%, 12%);
+                background-image: conic-gradient(from 0deg at 50% 50%,
+                        blue,
+                        purple,
+                        purple,
+                        blue);
+                background-blend-mode: multiply;
+                color: white;
+                min-block-size: 100dvh;
+                display: grid;
+                place-items: center;
+            }
+            /* No underline and no color change */
+            a {
+                text-decoration: none;
+                color: inherit;
     
+            }
+            a:link, a:visited, a:hover, a:active {
+                color: inherit; /* Hérite de la couleur définie plus haut */
+            }
     
-
-</body>
-</html>
+            pre {
+                --keyword: var(--purple);
+                --class-name: var(--gray);
+                --var: var(--blue);
+                --function: var(--yellow);
+                --string: var(--green);
+                --punctuation: var(--white);
+    
+                font-size: 2.5rem;
+                font-weight: bold;
+                background: hsl(222, 45%, 7%);
+                padding: 2rem;
+                border-radius: 1rem;
+    
+                position: relative;
+    
+                transition: all 64ms linear;
+    
+                transform-style: preserve-3d;
+                transform:
+                    perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+            }
+    
+            .token.keyword {
+                color: var(--keyword);
+            }
+    
+            .token.var {
+                color: var(--var);
+            }
+    
+            .token.class-name {
+                color: var(--class-name);
+            }
+    
+            .token.function {
+                color: var(--function);
+            }
+    
+            .token.string {
+                color: var(--string);
+            }
+    
+            .token.punctuation {
+                color: var(--punctuation);
+            }
+    
+            pre>* {
+                text-shadow: 0 0 0.3em currentColor;
+            }
+    
+            pre::before,
+            pre::after {
+                content: '';
+                position: absolute;
+                border-radius: inherit;
+            }
+    
+            pre::before {
+                inset: 0.75rem;
+                background: black;
+                transform: translateZ(-49px);
+                filter: blur(24px);
+                opacity: 0.5;
+            }
+    
+            pre::after {
+                inset: -1rem;
+                background: linear-gradient(-45deg, red, blue);
+                transform: translateZ(-50px);
+            }
+        </style>
+    </head>
+    
+    <body>
+        <pre class="language-python"
+            tabindex="0"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Jean-Baptiste</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token function">(</span><span class="token var">self</span><span class="token function">)</span><span class="token punctuation">:</span>
+        <span class="token var">self</span><span class="token punctuation">.</span><span class="token punctuation">role </span><span class="token operator">=</span> <span class="token string">"Data engineer"</span>
+        <span class="token var">self</span><span class="token punctuation">.</span><span class="token punctuation">gen_ai </span><span class="token operator">=</span> <span class="token var">True</span>
+    
+        <span class="token keyword">def</span> <span class="token function">contact</span><span class="token function">(</span><span class="token var">self</span><span class="token function">)</span><span class="token punctuation">:</span>
+        <a href="mailto:jean-baptiste.trognon@mines-ales.org"><span class="token punctuation">email</span> <span class="token operator">=</span> <span class="token string">"jean-baptiste.trognon"</span></a>
+        <a href="https://github.com/BetoJava" target="_blank"><span class="token punctuation">github</span> <span class="token operator">=</span> <span class="token string">"github.com/BetoJava"</span></a>
+        <a href="https://betojava.github.io/files/CV_TROGNON_Jean-Baptiste.pdf" target="_blank"><span class="token punctuation">CV</span> <span class="token operator">=</span> <span class="token class-name">CV<span class="token function">()</span></a>
+        </code></pre>
+        <script>
+            const pre = document.querySelector('pre')
+    
+            document.addEventListener('mousemove', (e) => {
+                rotateElement(e, pre);
+            });
+    
+            function rotateElement(event, element) {
+                const x = event.clientX;
+                const y = event.clientY;
+    
+                const middleX = window.innerWidth / 2;
+                const middleY = window.innerHeight / 2;
+    
+                const offsetX = ((x - middleX) / middleX) * 45;
+                const offsetY = ((y - middleY) / middleY) * 45;
+    
+                element.style.setProperty('--rotateX', -1 * offsetY + 'deg');
+                element.style.setProperty('--rotateY', offsetX + 'deg');
+            }
+        </script>
+    </body>
+    
+    </html>
